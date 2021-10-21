@@ -1,0 +1,24 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+authentication-module:
+  enable: true
+  common:
+    headerTokenSymbol: X-Token
+    passwordEncoderAlgorithm: BCrypt
+    tokenHmacAlgorithm: HmacSHA1
+    grantDuration: 15m
+  mvc:
+    enable: true
+    matchPathPatterns: ['/**']
+    excludePathPatterns: ['/auth/login']
+  antiBruteCrack:
+    maxRetryTimes: 10
+    banDuration: 1d
+  persistent:
+    type: REDIS
+    keyPrefix: 'app'
+
+

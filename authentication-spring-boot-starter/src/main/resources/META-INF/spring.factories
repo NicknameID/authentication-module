@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+tech.mufeng.module.starter.auto.config.AuthenticationBackendAutoConfig, \
+tech.mufeng.module.starter.auto.config.AuthenticationAutoConfig, \
+tech.mufeng.module.starter.auto.config.AuthenticationMvcAutoConfig

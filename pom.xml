@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>tech.mufeng.module</groupId>
+  <artifactId>user-auth-module</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>user-auth-module</name>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>11</java.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <hutool.version>5.7.14</hutool.version>
+  </properties>
+
+  <modules>
+    <module>authentication-core</module>
+    <module>authentication-spring-boot-starter</module>
+    <module>example</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- 内部依赖 -->
+      <dependency>
+        <groupId>tech.mufeng.module</groupId>
+        <artifactId>authentication-core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>tech.mufeng.module</groupId>
+        <artifactId>authentication-spring-boot-starter</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+      <!-- 三方依赖 -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>5.1.5.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.redisson</groupId>
+        <artifactId>redisson-spring-boot-starter</artifactId>
+        <version>3.14.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
